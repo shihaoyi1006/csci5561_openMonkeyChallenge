@@ -1,0 +1,23 @@
+
+
+python demo/top_down_img_demo.py configs/animal/2d_kpt_sview_rgb_img/topdown_heatmap/macaque/res50_macaque_256x192.py https://download.openmmlab.com/mmpose/animal/resnet/res50_macaque_256x192-98f1dd3a_20210407.pth  --img-root a/test/ --json-file a/new_test_prediction.json --out-img-root a/val_result
+
+python tools/train.py configs/animal/2d_kpt_sview_rgb_img/topdown_heatmap/macaque/proposal_config.py
+
+
+python demo/top_down_img_demo.py configs/animal/2d_kpt_sview_rgb_img/topdown_heatmap/macaque/proposal_config.py a/epoch_10.pth  --img-root a/test/ --json-file a/new_test_prediction.json --out-img-root a/val_result
+
+
+# //////////////////////////////////////////////////
+
+
+
+python tools/test.py configs/pspnet/pspnet_r50-d8_512x1024_40k_cityscapes.py checkpoints/pspnet_r50-d8_512x1024_40k_cityscapes_20200605_003338-2966598c.pth --show
+
+
+python demo/image_demo.py demo/demo.jpg configs/pspnet/pspnet_r50-d8_512x1024_40k_cityscapes.py  checkpoints/pspnet_r50-d8_512x1024_40k_cityscapes_20200605_003338-2966598c.pth
+
+python demo/image_demo.py demo/demo.jpg configs/pspnet/pspnet_r50-d8_512x512_4x4_80k_coco-stuff164k.py  checkpoints/pspnet_r50-d8_512x512_4x4_80k_coco-stuff164k_20210707_152034-0e41b2db.pth
+
+
+python demo/image_demo.py demo/demo.jpg configs/hrnet/fcn_hr48_512x1024_40k_cityscapes.py  checkpoints/fcn_hr48_512x1024_40k_cityscapes_20200601_014240-a989b146.pth
